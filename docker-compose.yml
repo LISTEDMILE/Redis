@@ -1,0 +1,33 @@
+
+# we can add services which we are going to use on docker
+services:
+  #redis is like a database but it is like in memory database basically used for actions which are needed to be fetched repeatedly or the data doesnn't need to be permanently stored like rate limits otps we found on redis - cache hit nhi to cache miss
+
+  # container docker ke andar banta h permanent nhi hota uske liye volumes use karte h
+
+  # volumes waise kuch nhi bas isliye taki agar ye close bhi ho jae to data rhe
+
+  # ek bar alag se volumes neche list bhi karni padti h........
+  redis:
+    image: redis:7-alpine
+    container_name: RedisContainer
+    ports:
+      - "6379:6379"
+    command: ["redis-server","--appendonly","yes"]
+    volumes:
+      - redis-data:/data
+
+  mongo:
+    image: mongo:7
+    container_name: MongoContainer
+    ports:
+     - "27017:27017"
+    environment:
+      MONGO_DATABASE: MongoRedisDatabase
+    volumes:
+     - mongo-data:/data/db
+
+volumes:
+  redis-data:
+  mongo-data:
+
