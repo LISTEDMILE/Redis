@@ -1,18 +1,19 @@
 {
-  "name": "adding_services",
-  "version": "1.0.0",
-  "description": "",
-  "license": "ISC",
-  "author": "",
-  "type": "module",
-  "main": "api.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node src/api.js"
-  },
-  "dependencies": {
-    "bullmq": "^6.4.2",
-    "express": "^5.3.0",
-    "ioredis": "^6.0.0"
-  }
+    "name": "adding_services",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "type": "module",
+    "main": "api.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "node src/api.js",
+        "subs": "node src/subscriber.js"
+    },
+    "dependencies": {
+        "bullmq": "^6.4.2",
+        "express": "^5.3.0",
+        "ioredis": "^6.0.0"
+    }
 }
